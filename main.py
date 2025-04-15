@@ -1,34 +1,49 @@
-import subprocess #module is used to execute system-level commands in Python
-import sys #This module provides access to system-specific parameters and functions
+#==================================================================================
+#DEVELOPER: Aswin KS
+#DATE: 15-04-2025
+#ABOUT: NixVault: NixVault is a comprehensive Linux security hardening tool designed to safeguard your system from internal vulnerabilities and external threats.
+#Built with a focus on simplicity and power, NixVault automates best-practice configurations, manages sensitive data securely, and reinforces system integrity.
+#==================================================================================
+
+import subprocess  # module is used to execute system-level commands in Python
+import sys  # This module provides access to system-specific parameters and functions
 
 #---------------------------------------------
 
 LOG_FILE = "result.log"
 summary = {}
 
+# --------------------------------------------
+# Helper function to run commands and log output
 def log_output(command, task_name, section_name):
     with open(LOG_FILE, "a") as log:
         log.write(f"\n====={task_name}=====\n")
         result = subprocess.run(command, stdout=log, stderr=log)
+    
     # Store each task's result in the summary dictionary, categorized by section
     if section_name not in summary:
         summary[section_name] = []
     summary[section_name].append((task_name, result.returncode == 0))
     return result.returncode == 0
-#---------------------------------------------
 
+# ---------------------------------------------
+
+# Function to install UFW Firewall
 def install_ufw():
     return log_output(["apt-get", "install", "-y", "ufw"], "Installing UFW Firewall", "Configuring UFW Firewall")
 
-def setup_firewall():
+# Function to configure UFW Firewall
+def configure_firewall():
     success = True
     success &= log_output(["ufw", "default", "deny", "incoming"], "Set default deny incoming", "Configuring UFW Firewall")
     success &= log_output(["ufw", "default", "allow", "outgoing"], "Set default allow outgoing", "Configuring UFW Firewall")
     success &= log_output(["ufw", "allow", "ssh"], "Allowed SSH Port", "Configuring UFW Firewall")
     success &= log_output(["ufw", "--force", "enable"], "UFW activated & enabled on startup", "Configuring UFW Firewall")
     return success
-#---------------------------------------------
 
+# ---------------------------------------------
+
+# Function to print the summary
 def print_summary():
     print("\n📋 Summary Report:")
     print("-" * 80)
@@ -39,18 +54,15 @@ def print_summary():
         for task, result in tasks:
             status = "✅ Success" if result else "❌ Failed"
             print(f"{task:<50} {status}")
-        print("-" * len(section))  # Print a line after each section
     
     print("-" * 80)
-    print("🔍 See 'result.log' for more details.\n")    
+    print("🔍 See 'result.log' for more details.\n")
 
-#---------------------------------------------
+# ---------------------------------------------
 
-def linux_hardening():
-    # ✅ Clear the log file before starting
-    open(LOG_FILE, "w").close()
-
-    print("🔄 Apply latest Updates \n")
+# Function to apply system updates and upgrades
+def apply_updates():
+    print("\n🔄 Apply latest Updates \n")
 
     # Step 1: Check updates
     step1 = "Step 1: Checking for updates"
@@ -59,7 +71,7 @@ def linux_hardening():
     else:
         print("❌ Task 1: Failed to check for updates. See 'result.log' for details.\n")
         print_summary()
-        return
+        return False
 
     # Step 2: Apply system upgrades
     step2 = "Step 2: Applying system upgrades"
@@ -67,17 +79,49 @@ def linux_hardening():
         print("✅ Task 2: System upgraded successfully.\n")
     else:
         print("❌ Task 2: System upgrade failed. See 'result.log' for details.\n")
+        return False
 
-    # Step 3: UFW Firewall Setup
+    return True
+
+# ---------------------------------------------
+
+# Function to perform firewall configuration
+def configure_ufw():
     print("🛡️ Configuring UFW Firewall \n")
     firewall_step = "Step 3: Firewall installation & config"
-    if install_ufw() and setup_firewall():
+    if install_ufw() and configure_firewall():
         print("✅ Task 1: UFW firewall installed and configured.\n")
     else:
         print("❌ Task 1: UFW firewall configuration failed. Check 'result.log' for details.\n")
+        return False
 
-    print_summary()    
+    return True
 
-#---------------------------------------------
+# ---------------------------------------------
+
+# Function to clear the log file before starting
+def clear_log():
+    open(LOG_FILE, "w").close()
+
+# ---------------------------------------------
+
+# Main function that calls the above functions
+def linux_hardening():
+    # Clear the log file before starting
+    clear_log()
+
+    # Apply updates and upgrades
+    if not apply_updates():
+        return
+
+    # Configure UFW Firewall
+    if not configure_ufw():
+        return
+
+    # Print the summary of the tasks
+    print_summary()
+
+# ---------------------------------------------
+
 if __name__ == "__main__":
     linux_hardening()

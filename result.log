@@ -1,24 +1,24 @@
-Hit:1 https://apt.releases.hashicorp.com focal InRelease
-Hit:2 https://brave-browser-apt-release.s3.brave.com stable InRelease
-Hit:3 https://linux.teamviewer.com/deb stable InRelease
-Hit:4 https://deb.termius.com squeeze InRelease
+Hit:1 https://download.docker.com/linux/ubuntu focal InRelease
+Hit:2 http://security.ubuntu.com/ubuntu focal-security InRelease
+Hit:3 https://brave-browser-apt-release.s3.brave.com stable InRelease
+Hit:4 https://apt.releases.hashicorp.com focal InRelease
 Hit:5 https://packages.microsoft.com/repos/code stable InRelease
-Hit:6 https://download.docker.com/linux/ubuntu focal InRelease
+Hit:6 https://deb.termius.com squeeze InRelease
 Hit:7 http://ca.archive.ubuntu.com/ubuntu focal InRelease
 Hit:8 http://ca.archive.ubuntu.com/ubuntu focal-updates InRelease
-Hit:9 http://ca.archive.ubuntu.com/ubuntu focal-backports InRelease
-Hit:10 http://ppa.launchpad.net/ansible/ansible/ubuntu focal InRelease
-Hit:11 http://ppa.launchpad.net/peek-developers/stable/ubuntu focal InRelease
-Hit:12 http://security.ubuntu.com/ubuntu focal-security InRelease
+Hit:9 http://ppa.launchpad.net/ansible/ansible/ubuntu focal InRelease
+Hit:10 http://ppa.launchpad.net/peek-developers/stable/ubuntu focal InRelease
+Hit:11 http://ca.archive.ubuntu.com/ubuntu focal-backports InRelease
 Hit:13 https://packages.zorinos.com/stable focal InRelease
 Hit:14 http://ppa.launchpad.net/zorinos/apps/ubuntu focal InRelease
 Hit:15 https://packages.zorinos.com/patches focal InRelease
-Hit:17 http://ppa.launchpad.net/zorinos/drivers/ubuntu focal InRelease
-Hit:18 https://packages.zorinos.com/apps focal InRelease
+Hit:16 http://ppa.launchpad.net/zorinos/drivers/ubuntu focal InRelease
+Hit:17 https://packages.zorinos.com/apps focal InRelease
+Hit:12 https://packagecloud.io/slacktechnologies/slack/debian jessie InRelease
+Hit:18 https://packages.zorinos.com/drivers focal InRelease
 Hit:19 http://ppa.launchpad.net/zorinos/patches/ubuntu focal InRelease
-Hit:20 https://packages.zorinos.com/drivers focal InRelease
-Hit:21 http://ppa.launchpad.net/zorinos/stable/ubuntu focal InRelease
-Hit:16 https://packagecloud.io/slacktechnologies/slack/debian jessie InRelease
+Hit:20 http://ppa.launchpad.net/zorinos/stable/ubuntu focal InRelease
+Hit:21 https://linux.teamviewer.com/deb stable InRelease
 Reading package lists...
 
 =====Checking for updates=====
@@ -57,6 +57,15 @@ Use 'sudo apt autoremove' to remove them.
 0 upgraded, 0 newly installed, 0 to remove and 4 not upgraded.
 
 =====Installing UFW Firewall=====
+Resetting all rules to installed defaults. Proceed with operation (y|n)? Backing up 'user.rules' to '/etc/ufw/user.rules.20250415_155911'
+Backing up 'before.rules' to '/etc/ufw/before.rules.20250415_155911'
+Backing up 'after.rules' to '/etc/ufw/after.rules.20250415_155911'
+Backing up 'user6.rules' to '/etc/ufw/user6.rules.20250415_155911'
+Backing up 'before6.rules' to '/etc/ufw/before6.rules.20250415_155911'
+Backing up 'after6.rules' to '/etc/ufw/after6.rules.20250415_155911'
+
+
+=====Resetting UFW=====
 Default incoming policy changed to 'deny'
 (be sure to update your rules accordingly)
 
@@ -65,8 +74,12 @@ Default outgoing policy changed to 'allow'
 (be sure to update your rules accordingly)
 
 =====Set default allow outgoing=====
-Skipping adding existing rule
-Skipping adding existing rule (v6)
+Rules updated
+Rules updated (v6)
+
+=====Allowed SSH Port=====
+Rules updated
+Rules updated (v6)
 
 =====Allowed SSH Port=====
 Firewall is active and enabled on system startup

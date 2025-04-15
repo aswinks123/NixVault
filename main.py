@@ -47,9 +47,14 @@ def install_ufw():
 # Function to configure UFW Firewall
 def configure_firewall():
     success = True
+     # Reset UFW to remove all existing rules
+    success &= log_output(["sh", "-c", "yes | ufw reset"], "Resetting UFW", "Configuring UFW Firewall")
+    
+
     success &= log_output(["ufw", "default", "deny", "incoming"], "Set default deny incoming", "Configuring UFW Firewall")
     success &= log_output(["ufw", "default", "allow", "outgoing"], "Set default allow outgoing", "Configuring UFW Firewall")
     success &= log_output(["ufw", "allow", "ssh"], "Allowed SSH Port", "Configuring UFW Firewall")
+    success &= log_output(["ufw", "allow", "https"], "Allowed SSH Port", "Configuring UFW Firewall")
     success &= log_output(["ufw", "--force", "enable"], "UFW activated & enabled on startup", "Configuring UFW Firewall")
     return success
 

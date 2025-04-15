@@ -7,11 +7,23 @@
 
 import subprocess  # module is used to execute system-level commands in Python
 import sys  # This module provides access to system-specific parameters and functions
-
+import os
 #---------------------------------------------
 
 LOG_FILE = "result.log"
 summary = {}
+
+
+
+# Check if the script is run as root
+def check_root():
+    if os.geteuid() != 0:
+        print("❌ This script must be run as root. Re-running with sudo or switch to root!")
+        # Exit the program
+        exit(1)
+        
+    else:
+        print("✅ Running as root.\n")
 
 # --------------------------------------------
 # Helper function to run commands and log output
@@ -65,20 +77,20 @@ def apply_updates():
     print("\n🔄 Apply latest Updates \n")
 
     # Step 1: Check updates
-    step1 = "Step 1: Checking for updates"
+    step1 = "Checking for updates"
     if log_output(["apt-get", "update", "-y"], step1, "Apply latest Updates"):
-        print("✅ Task 1: System update check completed successfully.\n")
+        print("✅ Task1: System update check completed successfully.\n")
     else:
-        print("❌ Task 1: Failed to check for updates. See 'result.log' for details.\n")
+        print("❌ Task1: Failed to check for updates. See 'result.log' for details.\n")
         print_summary()
         return False
 
     # Step 2: Apply system upgrades
-    step2 = "Step 2: Applying system upgrades"
+    step2 = "Applying system upgrades"
     if log_output(["apt-get", "upgrade", "-y"], step2, "Apply latest Updates"):
-        print("✅ Task 2: System upgraded successfully.\n")
+        print("✅ Task2: System upgraded successfully.\n")
     else:
-        print("❌ Task 2: System upgrade failed. See 'result.log' for details.\n")
+        print("❌ Task2: System upgrade failed. See 'result.log' for details.\n")
         return False
 
     return True
@@ -88,11 +100,11 @@ def apply_updates():
 # Function to perform firewall configuration
 def configure_ufw():
     print("🛡️ Configuring UFW Firewall \n")
-    firewall_step = "Step 3: Firewall installation & config"
+    
     if install_ufw() and configure_firewall():
-        print("✅ Task 1: UFW firewall installed and configured.\n")
+        print("✅ Task1: UFW firewall installed and configured.\n")
     else:
-        print("❌ Task 1: UFW firewall configuration failed. Check 'result.log' for details.\n")
+        print("❌ Task1: UFW firewall configuration failed. Check 'result.log' for details.\n")
         return False
 
     return True
@@ -103,6 +115,14 @@ def configure_ufw():
 def clear_log():
     open(LOG_FILE, "w").close()
 
+
+
+def about():
+    description = """
+    NixVault is a comprehensive Linux security hardening tool designed to safeguard your system from internal vulnerabilities and external threats. 
+    Built with a focus on simplicity and power, NixVault automates best-practice configurations, manages sensitive data securely, and reinforces system integrity.
+    """
+    print(description)
 # ---------------------------------------------
 
 # Main function that calls the above functions
@@ -124,4 +144,6 @@ def linux_hardening():
 # ---------------------------------------------
 
 if __name__ == "__main__":
+    about() # Print about section of the program
+    check_root()  # Ensure the script runs as root or with sudo
     linux_hardening()

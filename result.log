@@ -1,28 +1,27 @@
-Hit:1 https://brave-browser-apt-release.s3.brave.com stable InRelease
-Hit:2 https://download.docker.com/linux/ubuntu focal InRelease
-Hit:3 https://apt.releases.hashicorp.com focal InRelease
+Hit:1 https://apt.releases.hashicorp.com focal InRelease
+Hit:2 https://brave-browser-apt-release.s3.brave.com stable InRelease
+Hit:3 https://linux.teamviewer.com/deb stable InRelease
 Hit:4 https://deb.termius.com squeeze InRelease
 Hit:5 https://packages.microsoft.com/repos/code stable InRelease
-Hit:6 http://ca.archive.ubuntu.com/ubuntu focal InRelease
-Hit:7 http://ca.archive.ubuntu.com/ubuntu focal-updates InRelease
-Hit:8 http://ca.archive.ubuntu.com/ubuntu focal-backports InRelease
-Hit:9 https://linux.teamviewer.com/deb stable InRelease
-Hit:10 http://security.ubuntu.com/ubuntu focal-security InRelease
-Hit:11 http://ppa.launchpad.net/ansible/ansible/ubuntu focal InRelease
-Hit:12 http://ppa.launchpad.net/peek-developers/stable/ubuntu focal InRelease
+Hit:6 https://download.docker.com/linux/ubuntu focal InRelease
+Hit:7 http://ca.archive.ubuntu.com/ubuntu focal InRelease
+Hit:8 http://ca.archive.ubuntu.com/ubuntu focal-updates InRelease
+Hit:9 http://ca.archive.ubuntu.com/ubuntu focal-backports InRelease
+Hit:10 http://ppa.launchpad.net/ansible/ansible/ubuntu focal InRelease
+Hit:11 http://ppa.launchpad.net/peek-developers/stable/ubuntu focal InRelease
+Hit:12 http://security.ubuntu.com/ubuntu focal-security InRelease
 Hit:13 https://packages.zorinos.com/stable focal InRelease
 Hit:14 http://ppa.launchpad.net/zorinos/apps/ubuntu focal InRelease
 Hit:15 https://packages.zorinos.com/patches focal InRelease
-Hit:16 https://packages.zorinos.com/apps focal InRelease
 Hit:17 http://ppa.launchpad.net/zorinos/drivers/ubuntu focal InRelease
-Hit:19 https://packages.zorinos.com/drivers focal InRelease
-Hit:20 http://ppa.launchpad.net/zorinos/patches/ubuntu focal InRelease
-Get:21 http://ppa.launchpad.net/zorinos/stable/ubuntu focal InRelease [18.1 kB]
-Hit:18 https://packagecloud.io/slacktechnologies/slack/debian jessie InRelease
-Fetched 18.1 kB in 3s (6,258 B/s)
+Hit:18 https://packages.zorinos.com/apps focal InRelease
+Hit:19 http://ppa.launchpad.net/zorinos/patches/ubuntu focal InRelease
+Hit:20 https://packages.zorinos.com/drivers focal InRelease
+Hit:21 http://ppa.launchpad.net/zorinos/stable/ubuntu focal InRelease
+Hit:16 https://packagecloud.io/slacktechnologies/slack/debian jessie InRelease
 Reading package lists...
 
-=====Step 1: Checking for updates=====
+=====Checking for updates=====
 Reading package lists...
 Building dependency tree...
 Reading state information...
@@ -41,7 +40,7 @@ The following packages have been kept back:
   linux-image-generic-hwe-20.04 xdg-desktop-portal
 0 upgraded, 0 newly installed, 0 to remove and 4 not upgraded.
 
-=====Step 2: Applying system upgrades=====
+=====Applying system upgrades=====
 Reading package lists...
 Building dependency tree...
 Reading state information...

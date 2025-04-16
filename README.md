@@ -15,17 +15,35 @@
  NixVault - Created by Aswin KS 
 
 ```
+---
 
+## 📦 Features
 
-To run the program:
+- 🔄 Apply latest system updates
+- 🛡️ Configure UFW firewall with default secure settings
+- ⚙️ Disable insecure or unused services like Telnet, rsh, etc.
+- 🔐 Enforce user account security policies (e.g., password aging, root SSH disable)
+- 📄 Generate a clear summary report of each operation
+- ✅ Gracefully handles Ctrl+C interruptions
+- 💡 Modular structure with easy extensibility
 
-sudo python3 main.py
+---
+## 🚀 Getting Started
 
+### 1. Clone the Repository
+
+```bash
+git clone https://github.com/aswinks123/NixVault
+cd NixVault
+sudo python3 nixVault.py
+```
 Note: This program is set up to run only with sudo or root privilages
 
 Sample screenshot
 
 
-![alt text](./resources/image-0.png)
+![alt text](./resources/image.png)
 
 ![alt text](./resources/image-1.png)
+
+![alt text](./resources/image-2.png)

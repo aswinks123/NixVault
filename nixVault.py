@@ -28,7 +28,7 @@ def show_welcome():
     print("2. 🛡️  Configure UFW Firewall")
     print("3. ⚙️  Disable Insecure/Unnecessary Services")
     print("4. 🔐 Enforce User Account Security (password policies, SSH root login)")
-    print("5. 📋 Show Summary Report")
+    print("5. 📄 Show Summary Report")
     print("")
     print("-" * 70)
 

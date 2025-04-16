@@ -22,7 +22,7 @@ def log_output(command, task_name, section_name):
 
 def print_summary():
     """Print the summary of operations"""
-    print("\n📋 Summary Report:")
+    print("\n📄 Summary Report:")
     print("-" * 158)
     time.sleep(1)
 

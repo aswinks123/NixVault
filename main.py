@@ -83,7 +83,7 @@ def show_progress_bar(seconds=5, message="\n\n⏳ Generating Summary Report. Ple
         sys.stdout.flush()
     print("\n")  # Newline after progress bar finishes
 
-# ---------------------------------------------< FUnction to install and configure ufw firewall >
+# ---------------------------------------------< Function to install and configure ufw firewall >
 
 # Function to install UFW Firewall
 def install_ufw():
@@ -164,7 +164,7 @@ def configure_ufw():
 
     return True
 
-# ---------------------------------------------< Disable service function >
+# ---------------------------------------------< Function to disable unwanted services >
 
 # Function to disable unwanted services
 def disable_services():

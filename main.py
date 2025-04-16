@@ -177,6 +177,7 @@ def disable_services():
         ("telnet", "Insecure remote login service"),
         ("cups", "Printing service (often unnecessary on servers)"),
         ("nginx", "Webserver (Not needed by default)"),
+        ("snapd.service", "Not useful for remote servers - Optional"),
         ("rsh", "Remote shell service (insecure)"),
         ("rlogin", "Remote login service (insecure)"),
         ("rexec", "Remote execution service (insecure)")

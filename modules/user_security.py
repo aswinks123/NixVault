@@ -21,3 +21,20 @@ def enforce_password_policy():
         print(f"❌ Failed to apply Password Policies")
 
     return True
+
+def disable_root_ssh():
+    print("\n🔐 Disabling Root login \n")
+    time.sleep(1)
+    success = True
+    success &= log_output(["sed", "-i", "s/^#*PermitRootLogin.*/PermitRootLogin no/", "/etc/ssh/ssh_config"], 
+                "Disable root SSH login", "User Security")
+    success &= log_output(["systemctl", "reload", "ssh"], 
+                "Reload SSH service", "User Security")
+    if success:
+
+        print(f"✅ Root login Disabled")
+    else:
+        print(f"❌ Failed to Disable Root Login")
+
+    return True
+

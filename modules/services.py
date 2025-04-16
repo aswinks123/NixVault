@@ -3,8 +3,8 @@ from utils.logging import log_output
 import time
 
 def disable_services():
-    """Disable unnecessary services"""
-    print("\n 🖨️ Disabling Unnecessary Services \n")
+    """Disable unused services"""
+    print("\n⚙️  Disabling Unnecessary Services \n")
     time.sleep(1)
 
     services_to_disable = [

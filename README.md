@@ -4,15 +4,16 @@
     <p>NixVault is a comprehensive Linux security hardening tool designed to safeguard your system from internal vulnerabilities and external threats. Built with a focus on simplicity and power, NixVault automates best-practice configurations, manages sensitive data securely, and reinforces system integrity.</p>
 </div>
 
-
-``` _   _ _    __      __         _ _   
+```
+  _   _ _    __      __         _ _   
  | \ | (_)   \ \    / /        | | |  
  |  \| |___  _\ \  / /_ _ _   _| | |_ 
  | . ` | \ \/ /\ \/ / _` | | | | | __|
  | |\  | |>  <  \  / (_| | |_| | | |_ 
  |_| \_|_/_/\_\  \/ \__,_|\__,_|_|\__|
  
- ~ NixVault - Created by Aswin KS ~
+ NixVault - Created by Aswin KS 
+
 ```
 
 

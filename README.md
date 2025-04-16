@@ -3,7 +3,9 @@ NixVault is a comprehensive Linux security hardening tool designed to safeguard 
 
 To run the program:
 
-python3 main.py
+sudo python3 main.py
+
+Note: This program is set up to run only with sudo or root privilages
 
 Sample screenshot
 

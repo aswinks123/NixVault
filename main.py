@@ -176,8 +176,8 @@ def disable_services():
     services_to_disable = [
         ("telnet", "Insecure remote login service"),
         ("cups", "Printing service (often unnecessary on servers)"),
-        ("nginx", "Webserver (Not needed by default)"),
-        ("apache2", "Optional"),
+        ("nginx", "Webserver"),
+        ("apache2", "Webserver"),
         ("rsh", "Remote shell service (insecure)"),
         ("rlogin", "Remote login service (insecure)"),
         ("rexec", "Remote execution service (insecure)")

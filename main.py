@@ -153,7 +153,7 @@ def apply_updates():
 # Function to perform firewall configuration
 def configure_ufw():
     
-    print("\n🛡️ Configuring UFW Firewall \n")
+    print("\n🛡️  Configuring UFW Firewall \n")
     time.sleep(1)
     
     if install_ufw() and configure_firewall():

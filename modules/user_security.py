@@ -16,9 +16,9 @@ def enforce_password_policy():
                "Set password warning age", "User Security")
     if success:
 
-        print(f"✅ Password Policies set Successfully")
+        print(f"✅ Task1: Password Policies set Successfully")
     else:
-        print(f"❌ Failed to apply Password Policies")
+        print(f"❌ Task1: Failed to apply Password Policies")
 
     return True
 
@@ -32,9 +32,9 @@ def disable_root_ssh():
                 "Reload SSH service", "User Security")
     if success:
 
-        print(f"✅ Root login Disabled")
+        print(f"✅ Task1: Root login Disabled")
     else:
-        print(f"❌ Failed to Disable Root Login")
+        print(f"❌ Task1: Failed to Disable Root Login")
 
     return True
 

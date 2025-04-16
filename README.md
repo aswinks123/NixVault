@@ -25,7 +25,9 @@
 - 🔐 Enforce user account security policies (e.g., password aging, root SSH disable)
 - 📄 Generate a clear summary report of each operation
 - ✅ Gracefully handles Ctrl+C interruptions
+- 📝 Log file integration to easily review errors and logs
 - 💡 Modular structure with easy extensibility
+
 
 ---
 ## 🚀 Getting Started

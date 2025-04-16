@@ -44,6 +44,6 @@ Sample screenshot
 
 ![alt text](./resources/image.png)
 
-![alt text](./resources/image-1.png)
+![alt text](./resources/image1.png)
 
 ![alt text](./resources/image-2.png)

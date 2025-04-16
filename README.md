@@ -26,6 +26,6 @@ Note: This program is set up to run only with sudo or root privilages
 Sample screenshot
 
 
-![alt text](image.png)
+![alt text](image-0.png)
 
 ![alt text](image-1.png)

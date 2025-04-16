@@ -28,7 +28,7 @@
 - 📝 Log file integration to easily review errors and logs
 - 💡 Modular structure with easy extensibility
 
-Note: Program is in development stage
+Note: Software is in development stage
 
 ---
 ## 🚀 Getting Started

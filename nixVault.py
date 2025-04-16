@@ -13,6 +13,7 @@ from utils.logging import clear_log, print_summary
 from modules.updates import apply_updates
 from modules.firewall import configure_ufw
 from modules.services import disable_services
+from modules.user_security import enforce_password_policy
 import time
 
 def linux_hardening():
@@ -26,6 +27,9 @@ def linux_hardening():
         return
     
     if not disable_services():
+        return
+
+    if not enforce_password_policy():     
         return
 
     show_progress_bar()

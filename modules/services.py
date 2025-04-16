@@ -4,7 +4,7 @@ import time
 
 def disable_services():
     """Disable unnecessary services"""
-    print("\n🔧 Disabling Unnecessary Services \n")
+    print("\n 🖨️ Disabling Unnecessary Services \n")
     time.sleep(1)
 
     services_to_disable = [
@@ -29,7 +29,7 @@ def disable_services():
                            stderr=subprocess.PIPE)
             
             if check_enabled.returncode == 0 or check_active.returncode == 0:
-                print(f"ℹ️ Attempting to disable {service} ({description})")
+                print(f" ℹ️ Attempting to disable {service} ({description})")
                 
                 stop_ok = log_output(["systemctl", "stop", service], 
                                    f"Stopping {service}", 
@@ -45,7 +45,7 @@ def disable_services():
                     print(f"❌ Failed to disable {service}")
                     all_success = False
             else:
-                print(f"ℹ️ {service} is not enabled or not present (skipping)")
+                print(f" ℹ️ {service} is not enabled or not present (skipping)")
                 
         except Exception as e:
             print(f"⚠️ Error processing {service}: {str(e)}")

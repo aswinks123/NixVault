@@ -35,10 +35,11 @@ def ssh_hardening():
 
     # Process each setting
     for key, value in harden_rules.items():
+
         # First remove any existing entries (commented or not)
         log_output(
             ["sed", "-i", f"/^#*{key}[[:space:]]/d", ssh_config],
-            f"Removed existing entries for {key}",
+            f"Removed existing and added new entries for {key}",
             "SSH Hardening"
         )
         

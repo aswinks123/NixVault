@@ -42,8 +42,9 @@ def print_summary():
     for section, tasks in summary.items():
         print(f"\n{section}:\n" + "-" * len(section))
         for task, result in tasks:
-            status = "              ✅ Success" if result else "❌ Failed"
-            print(f"{task:<50} {status}")
+            status = "✅ Success" if result else "❌ Failed"
+            #print(f"{task:<50} {status}")
+            print(f"{task:<120} {status:>20}")
     
     print("-" * 158)
     print("🔍 See result located at 'logs/result.log' for more details.\n")

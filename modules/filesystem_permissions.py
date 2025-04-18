@@ -2,7 +2,7 @@ import subprocess
 from utils.logging import log_output
 from configuration.config import LOG_FILE
 import time
-import os
+import os #To use os commands
 
 
 def filesystem_security():

@@ -37,7 +37,7 @@ def show_welcome():
     print("8. Show Summary Report")
 
     print("")
-    print("-" * 70)
+    print("-" * 158)
 
 
 

@@ -15,6 +15,7 @@ from modules.firewall import configure_ufw
 from modules.services import disable_services
 from modules.user_security import user_account_management
 from modules.ssh import ssh_hardening
+from modules.filesystem_permissions import filesystem_security
 import time
 
 
@@ -55,20 +56,25 @@ def linux_hardening():
     """Main hardening function"""
     clear_log()
     
-    if not apply_updates():
+    # if not apply_updates():
+    #     return
+
+    # if not configure_ufw():
+    #     return
+    
+    # if not disable_services():
+    #     return
+
+    # if not user_account_management():     
+    #     return
+    
+    # if not ssh_hardening():     
+    #     return 
+    
+    if not filesystem_security():     
         return
 
-    if not configure_ufw():
-        return
-    
-    if not disable_services():
-        return
-
-    if not user_account_management():     
-        return
-    
-    if not ssh_hardening():     
-        return  
+     
     
     
     show_progress_bar()

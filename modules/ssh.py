@@ -42,7 +42,7 @@ def ssh_hardening():
     try:
         with open("/etc/issue.net", "w") as banner_file:
             banner_file.write("Authorized access only. Disconnect IMMEDIATELY if you are not authorized.\n")
-        log_output(["chmod", "644", "/etc/issue.net"], "Set SSH login Banner", "SSH Security Hardening")
+        log_output(["chmod", "644", "/etc/issue.net"], "Set SSH login Banner", "SSH Secure Banner")
     except Exception as e:
         print(f"⚠️ Error creating banner: {str(e)}")
 

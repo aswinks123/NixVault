@@ -13,7 +13,8 @@ from utils.logging import clear_log, print_summary
 from modules.updates import apply_updates
 from modules.firewall import configure_ufw
 from modules.services import disable_services
-from modules.user_security import enforce_password_policy, disable_root_ssh
+from modules.user_security import user_account_management
+from modules.ssh import ssh_hardening
 import time
 
 
@@ -23,12 +24,14 @@ def show_welcome():
     print("Version: 1.0")
     print("Source code: https://github.com/aswinks123/NixVault")
     print("")
-    print("\nThis script will perform the following tasks:\n")
-    print("1. 🔄 Apply System Updates")
-    print("2. 🛡️  Configure UFW Firewall")
-    print("3. ⚙️  Disable Insecure/Unnecessary Services")
-    print("4. 🔐 Enforce User Account Security (password policies, SSH root login)")
-    print("5. 📝 Show Summary Report")
+    print("\n📌 Following Tasks will be performed:\n")
+    print("1. Apply Latest Updates")
+    print("2. Configure UFW Firewall")
+    print("3. Disable Insecure/Unnecessary Services")
+    print("4. Enforce User Account Security (password policies)")
+    print("5. SSH Security Hardening")
+    print("6. Show Summary Report")
+
     print("")
     print("-" * 70)
 
@@ -36,7 +39,7 @@ def show_welcome():
 
 def ask_confirmation():
     while True:
-        choice = input("\n▶️  Do you want to continue? (yes/no): ").strip().lower()
+        choice = input("\n▶ Do you want to continue? (yes/no): ").strip().lower()
         if choice in ["yes", "y"]:
             return True
         elif choice in ["no", "n"]:
@@ -52,20 +55,23 @@ def linux_hardening():
     """Main hardening function"""
     clear_log()
     
-    if not apply_updates():
-        return
+    # if not apply_updates():
+    #     return
 
-    if not configure_ufw():
+    # if not configure_ufw():
+    #     return
+    
+    # if not disable_services():
+    #     return
+
+    # if not user_account_management():     
+    #     return
+    if not ssh_hardening():     
         return
     
-    if not disable_services():
-        return
-
-    if not enforce_password_policy():     
-        return
     
-    if not disable_root_ssh():     
-        return
+    
+
 
     show_progress_bar()
     print_summary()

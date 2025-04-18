@@ -40,7 +40,7 @@ def disable_services():
                                       "Service Hardening")
 
                 if stop_ok and disable_ok:
-                    print(f"✅ Successfully disabled {service}")
+                    print(f" ✅ Successfully disabled {service}")
                 else:
                     print(f"❌ Failed to disable {service}")
                     all_success = False

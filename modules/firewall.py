@@ -22,9 +22,9 @@ def configure_ufw():
     time.sleep(1)
     
     if install_ufw() and configure_firewall():
-        print("✅ Task1: UFW firewall installed and configured.\n")
+        print("✅ UFW firewall installed and configured.\n")
     else:
-        print("❌ Task1: UFW firewall configuration failed. Check 'result.log' for details.\n")
+        print("❌ UFW firewall configuration failed. Check 'result.log' for details.\n")
         return False
 
     return True

@@ -62,9 +62,9 @@ def ssh_hardening():
 
     if success:
 
-        print(f"✅ Task1: SSH Secured Successfully")
+        print(f"✅ SSH Secured Successfully")
     else:
-        print(f"❌ Task1: Failed to Secure SSH")
+        print(f"❌ Failed to Secure SSH")
 
     return True
 

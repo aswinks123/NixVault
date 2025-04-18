@@ -29,8 +29,8 @@ def filesystem_security():
         else:
              print(f"⚠️ {file_path} not found. Skipping...")
     if success:
-        print("✅ Task2: Filesystem Security Permisson applied successfully.\n")
+        print("✅ Filesystem Security Permisson applied successfully.\n")
     else:
-        print("❌ Task2: Some filesystem configurations failed.\n")
+        print("❌ Some filesystem configurations failed.\n")
 
     return success

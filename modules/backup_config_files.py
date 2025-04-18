@@ -55,9 +55,9 @@ def backup_config_files():
             print(f"⚠️ {file_path} does not exist. Skipping...")
 
     if success:
-        print(f"\n✅ Task: Configuration files backed up successfully to {backup_dir}\n")
+        print(f"\n✅ Configuration files backed up successfully to {backup_dir}\n")
     else:
-        print(f"\n❌ Task: Some configuration files failed to back up.\n")
+        print(f"\n❌ Some configuration files failed to back up.\n")
 
     return success
 

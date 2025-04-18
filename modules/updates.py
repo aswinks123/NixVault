@@ -9,17 +9,17 @@ def apply_updates():
     # Step 1: Check updates
     step1 = "Checking for updates"
     if log_output(["apt-get", "update", "-y"], step1, "Apply latest Updates"):
-        print("✅ Task1: System update check completed successfully.\n")
+        print("✅ System update check completed successfully.\n")
     else:
-        print("❌ Task1: Failed to check for updates. See 'result.log' for details.\n")
+        print("❌ Failed to check for updates. See 'result.log' for details.\n")
         return False
 
     # Step 2: Apply system upgrades
     step2 = "Applying system upgrades"
     if log_output(["apt-get", "upgrade", "-y"], step2, "Apply latest Updates"):
-        print("✅ Task2: System upgraded successfully.\n")
+        print("✅ System upgraded successfully.\n")
     else:
-        print("❌ Task2: System upgrade failed. See 'result.log' for details.\n")
+        print("❌ System upgrade failed. See 'result.log' for details.\n")
         return False
 
     return True

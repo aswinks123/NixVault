@@ -18,9 +18,9 @@ def user_account_management():
                
     if success:
 
-        print(f"✅ Task1: Account Configured Successfully")
+        print(f"✅ Account Configured Successfully")
     else:
-        print(f"❌ Task1: Account Configuration Failed")
+        print(f"❌ Account Configuration Failed")
 
     return True
 

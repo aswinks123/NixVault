@@ -45,7 +45,7 @@ def print_summary():
         for task, result in tasks:
             status = "✅ Success" if result else "❌ Failed"
             #print(f"{task:<50} {status}")
-            print(f"{task:<120} {status:>40}")
+            print(f"{task:<120} {status:>36}")
     
     print("-" * 158)
     print("🔍 See result located at 'logs/result.log' for more details.\n")

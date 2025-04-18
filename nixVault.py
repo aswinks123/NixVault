@@ -16,6 +16,7 @@ from modules.services import disable_services
 from modules.user_security import user_account_management
 from modules.ssh import ssh_hardening
 from modules.filesystem_permissions import filesystem_security
+from modules.backup_config_files import backup_config_files
 import time
 
 
@@ -31,7 +32,9 @@ def show_welcome():
     print("3. Disable Insecure/Unnecessary Services")
     print("4. Enforce User Account Security (password policies)")
     print("5. SSH Security Hardening")
-    print("6. Show Summary Report")
+    print("6. Filesystem Security Hardening")
+    print("7. Backing up Important Configuration Files")
+    print("8. Show Summary Report")
 
     print("")
     print("-" * 70)
@@ -72,6 +75,9 @@ def linux_hardening():
     #     return 
     
     if not filesystem_security():     
+        return
+    
+    if not backup_config_files():
         return
 
      

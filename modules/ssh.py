@@ -6,7 +6,7 @@ import os
 
 
 def ssh_hardening():
-    print("\n SSH Security Hardening \n")
+    print("\n ✨ SSH Security Hardening \n")
     time.sleep(1)
     ssh_config = "/etc/ssh/sshd_config"
     success = True

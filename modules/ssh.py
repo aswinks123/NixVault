@@ -27,8 +27,7 @@ def ssh_hardening():
         "ClientAliveCountMax": "0",             # Disconnect immediately after 1 interval
         "AllowTcpForwarding": "no",
         "UseDNS": "no",
-        #"LoginGraceTime": "20",                 # Shorten login grace time
-        "Banner": "/etc/issue.net"
+        "Banner": " /etc/issue.net"
     }
 
     #Apply settings

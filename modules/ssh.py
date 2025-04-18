@@ -1,9 +1,7 @@
 import subprocess
 from utils.logging import log_output
-from configuration.config import LOG_FILE
 import time
 import os
-
 
 def ssh_hardening():
     print("\n✨ SSH Security Hardening \n")
@@ -14,7 +12,7 @@ def ssh_hardening():
         print(f"❌ SSH configuration file not found at: {ssh_config}. Is SSH installed? Skipping this step...")
         return False
 
-    # Define hardening rules (removed duplicates)
+    # Define hardening rules
     harden_rules = {
         "PermitRootLogin": "no",
         "PasswordAuthentication": "no",  # Use only key-based auth
@@ -30,12 +28,20 @@ def ssh_hardening():
         "Banner": "/etc/issue.net"
     }
 
-  
+    # Remove existing duplicate entries if any
+    for key in harden_rules:
+        # This will remove any existing lines that start with the key
+        log_output(
+            ["sed", "-i", f"/^{key}/d", ssh_config],
+            f"Removed duplicates for {key}",
+            "SSH Hardening"
+        )
 
-    # Apply each setting in ssh_config using 'sed' (no duplicates)
+    # Apply each setting in ssh_config using 'sed'
     for key, value in harden_rules.items():
-        success &= log_output(
-            ["sed", "-i", f"s|^#*{key}.*|{key} {value}|", ssh_config],
+        # Replace or add the setting
+        log_output(
+            ["sed", "-i", f"/^{key}/c\\{key} {value}", ssh_config],
             f"Set {key} to {value}",
             "SSH Hardening"
         )

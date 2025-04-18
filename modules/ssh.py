@@ -28,22 +28,23 @@ def ssh_hardening():
         "Banner": "/etc/issue.net"
     }
 
-    # Remove existing duplicate entries for each key
-    for key in harden_rules:
-        log_output(
-            ["sed", "-i", f"/^{key}/d", ssh_config],
-            f"Removed duplicates for {key}",
-            "SSH Hardening"
-        )
+    # Backup the original file
+    backup_file = f"{ssh_config}.bak"
+    if not os.path.exists(backup_file):
+        log_output(["cp", ssh_config, backup_file], "Created backup of SSH config", "SSH Hardening")
 
-    # Apply each setting in ssh_config using 'sed'
+    # Process each setting
     for key, value in harden_rules.items():
-        # This will ensure the setting is either updated or added
+        # First remove any existing entries (commented or not)
         log_output(
-            ["sed", "-i", f"/^{key}/c\\{key} {value}", ssh_config],
-            f"Set {key} to {value}",
+            ["sed", "-i", f"/^#*{key}[[:space:]]/d", ssh_config],
+            f"Removed existing entries for {key}",
             "SSH Hardening"
         )
+        
+        # Then append the new setting at the end of the file
+        with open(ssh_config, "a") as f:
+            f.write(f"\n{key} {value}\n")
 
     try:
         # Create custom login banner message
@@ -64,6 +65,7 @@ def ssh_hardening():
         log_output(["chmod", "644", "/etc/issue.net"], "Set SSH login Banner", "SSH Secure Banner")
     except Exception as e:
         print(f"⚠️ Error creating banner: {str(e)}")
+        success = False
 
     # Restart SSH service to apply the changes
     success &= log_output(["systemctl", "restart", "ssh"], "Restart SSH service", "SSH Hardening")
@@ -74,4 +76,4 @@ def ssh_hardening():
     else:
         print(f"❌ Failed to Secure SSH")
 
-    return True
+    return success

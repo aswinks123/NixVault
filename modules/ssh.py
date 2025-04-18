@@ -35,7 +35,7 @@ def ssh_hardening():
     for key, value in harden_rules.items():
         log_output([
             "sed", "-i",
-            f"s/^#*{key}.*/{key} {value}/",
+            f"s|^#*{key}.*|{key} {value}|",
             ssh_config
         ], f"Set {key} to {value}", "SSH Hardening")
     

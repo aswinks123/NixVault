@@ -35,6 +35,7 @@ def log_output(command, task_name, section_name):
 
 def print_summary():
     """Print the summary of operations"""
+    print("-" * 158)
     print("\n📝 Summary Report:")
     print("-" * 158)
     time.sleep(1)
@@ -44,7 +45,7 @@ def print_summary():
         for task, result in tasks:
             status = "✅ Success" if result else "❌ Failed"
             #print(f"{task:<50} {status}")
-            print(f"{task:<120} {status:>20}")
+            print(f"{task:<120} {status}")
     
     print("-" * 158)
     print("🔍 See result located at 'logs/result.log' for more details.\n")

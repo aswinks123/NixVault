@@ -23,7 +23,8 @@ def backup_config_files():
     ]
 
     # Get the home directory of the current user
-    home_dir = os.path.expanduser("~")
+    current_user = os.getenv("USER")
+    home_dir = os.path.expanduser(f"~{current_user}")  # Get the home directory of the current user
     backup_dir = os.path.join(home_dir, "config_backups")
 
      # Create the backup directory if it doesn't exist

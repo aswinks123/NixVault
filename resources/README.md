@@ -133,14 +133,7 @@ Open a pull request
 MIT License - See LICENSE file for details
 
 
-
-
-
-
-
-
-
-
+![alt text](/resources/nixVault.gif)
 
 
 

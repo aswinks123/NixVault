@@ -30,7 +30,7 @@
 - ✅ Gracefully handles Ctrl+C interruptions
 - 📝 Log file integration to easily review errors and logs
 - 💡 Modular structure with easy extensibility
-- 🐍 Build using Python
+- 🐍 Built using Python
 
 Note: Software is in development stage
 

@@ -23,7 +23,7 @@ def backup_config_files():
     ]
 
     # Get the home directory of the current user
-    
+
     home_dir = os.path.expanduser("~")
 
     backup_dir = os.path.join(home_dir, "config_backups")
@@ -56,7 +56,7 @@ def backup_config_files():
             print(f"⚠️  {file_path} does not exist. Skipping...")
 
     if success:
-        print(f"\n✅ Configuration files backed up successfully to {backup_dir}\n")
+        print(f"\n✅ All configuration files backed up successfully to {backup_dir}\n")
     else:
         print(f"\n❌ Some configuration files failed to back up.\n")
 

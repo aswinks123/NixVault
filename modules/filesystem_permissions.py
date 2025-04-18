@@ -6,7 +6,7 @@ import os
 
 
 def filesystem_security():
-    print("\n Filesystem Security Hardening \n")
+    print("\n 📁Filesystem Security Permisson Hardening \n")
     time.sleep(1)
     success = True
 
@@ -29,7 +29,7 @@ def filesystem_security():
         else:
              print(f"⚠️ {file_path} not found. Skipping...")
     if success:
-        print("✅ Task2: Filesystem hardened successfully.\n")
+        print("✅ Task2: Filesystem Permisson hardened successfully.\n")
     else:
         print("❌ Task2: Some filesystem configurations failed.\n")
 

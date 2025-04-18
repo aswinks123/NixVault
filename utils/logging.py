@@ -1,6 +1,7 @@
 import subprocess
 from configuration.config import LOG_FILE
 import time
+from datetime import datetime
 
 summary = {}
 
@@ -9,11 +10,18 @@ def clear_log():
     open(LOG_FILE, "w").close()
 
 
+    # Get the current time
+    current_time = datetime.now()
+
+    # Print the current time
+    print("Current time:", current_time.strftime("%Y-%m-%d %H:%M:%S"))
+
+    with open(LOG_FILE, "a") as log:
+        log.write(current_time.strftime("%Y-%m-%d %H:%M:%S"))
 
 
 def log_output(command, task_name, section_name):
-    with open(LOG_FILE, "a") as log:
-        log.write(f" Current Log>\n")
+
     """Run commands and log output to result.log file and in summary dictionary"""
     with open(LOG_FILE, "a") as log:
         log.write(f"\n--->{task_name}--<Success>\n")

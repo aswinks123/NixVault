@@ -52,7 +52,7 @@ def backup_config_files():
                 print(f"⚠️ Failed to back up {file_path}: {str(e)}")
                 success = False
         else:
-            print(f"⚠️ {file_path} does not exist. Skipping...")
+            print(f"⚠️  {file_path} does not exist. Skipping...")
 
     if success:
         print(f"\n✅ Configuration files backed up successfully to {backup_dir}\n")

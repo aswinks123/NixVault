@@ -25,7 +25,7 @@ Built with a focus on simplicity and power, NixVault automates best-practice con
     print(description)
     print("-" * 158)
 
-def show_progress_bar(seconds=5, message="\n\n⏳ Generating Summary Report. Please wait..."):
+def show_progress_bar(seconds=3, message="\n\n⏳ Generating Summary Report. Please wait..."):
     """Display a progress bar"""
     print(message)
     for i in range(seconds):

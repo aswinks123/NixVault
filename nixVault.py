@@ -55,24 +55,22 @@ def linux_hardening():
     """Main hardening function"""
     clear_log()
     
-    # if not apply_updates():
-    #     return
+    if not apply_updates():
+        return
 
-    # if not configure_ufw():
-    #     return
-    
-    # if not disable_services():
-    #     return
-
-    # if not user_account_management():     
-    #     return
-    if not ssh_hardening():     
+    if not configure_ufw():
         return
     
+    if not disable_services():
+        return
+
+    if not user_account_management():     
+        return
+    
+    if not ssh_hardening():     
+        return  
     
     
-
-
     show_progress_bar()
     print_summary()
 

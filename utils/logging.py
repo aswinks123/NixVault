@@ -11,7 +11,7 @@ def clear_log():
 def log_output(command, task_name, section_name):
     """Run commands and log output to result.log file and in summary dictionary"""
     with open(LOG_FILE, "a") as log:
-        log.write(f"\n====={task_name}=====\n")
+        log.write(f"\n--->{task_name}\n")
         result = subprocess.run(command, stdout=log, stderr=log)
     
     # Store each task's result in the summary dictionary

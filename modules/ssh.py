@@ -30,14 +30,7 @@ def ssh_hardening():
         "Banner": "/etc/issue.net"
     }
 
-    # Remove duplicates for each key before applying
-    for key in harden_rules:
-        # Remove any existing lines for the key in the SSH config file
-        log_output(
-            ["sed", "-i", f"/^{key}/d", ssh_config],
-            f"Remove duplicates for {key} in {ssh_config}",
-            "SSH Hardening"
-        )    
+  
 
     # Apply each setting in ssh_config using 'sed' (no duplicates)
     for key, value in harden_rules.items():

@@ -13,8 +13,8 @@ def filesystem_security():
     # 2. Restrict access to critical config files
     sensitive_files = {
         "/etc/passwd": "644",
-        "/etc/shadow": "000",
-        "/etc/gshadow": "000",
+        "/etc/shadow": "640",
+        "/etc/gshadow": "640",
         "/etc/group": "644",
         "/etc/ssh/sshd_config": "600",
     }

@@ -40,8 +40,18 @@ def ssh_hardening():
         ], f"Set {key} to {value}", "SSH Hardening")
     
     try:
+        banner_message = f"""
+************************************************************
+*                                                          *
+*  WARNING: Authorized access only.                        *
+*  Disconnect IMMEDIATELY if you are not an authorized     *
+*  Created by nixVault Automation                          *
+*  All activity is monitored and recorded.                 *
+*                                                          *
+************************************************************
+"""
         with open("/etc/issue.net", "w") as banner_file:
-            banner_file.write("Authorized access only. Disconnect IMMEDIATELY if you are not authorized.\n")
+            banner_file.write(banner_file)
         log_output(["chmod", "644", "/etc/issue.net"], "Set SSH login Banner", "SSH Secure Banner")
     except Exception as e:
         print(f"⚠️ Error creating banner: {str(e)}")

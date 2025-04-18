@@ -30,7 +30,7 @@
 - ✅ Gracefully handles Ctrl+C interruptions
 - 📝 Log file integration to easily review errors and logs
 - 💡 Modular structure with easy extensibility
--  Build using Python
+- 🐍 Build using Python
 
 Note: Software is in development stage
 
@@ -132,17 +132,15 @@ Open a pull request
 
 MIT License - See LICENSE file for details
 
+### Demo
 
 ![alt text](/resources/nixVault.gif)
 
 
+### Sample screenshot
 
 
-
-Sample screenshot
-
-
-![alt text](./resources/image.png)
+![alt text](/resources/image.png)
 
 ![alt text](./resources/image1.png)
 

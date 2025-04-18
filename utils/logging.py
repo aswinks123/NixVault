@@ -14,7 +14,7 @@ def clear_log():
     current_time = datetime.now()
 
     # Print the current time
-    print("Current time:", current_time.strftime("%Y-%m-%d %H:%M:%S"))
+    print("Current time:", current_time.strftime("%Y-%m-%d %H:%M:%S \n\n"))
 
     with open(LOG_FILE, "a") as log:
         log.write(current_time.strftime("%Y-%m-%d %H:%M:%S"))
@@ -24,7 +24,7 @@ def log_output(command, task_name, section_name):
 
     """Run commands and log output to result.log file and in summary dictionary"""
     with open(LOG_FILE, "a") as log:
-        log.write(f"\n--->{task_name}--<Success>\n")
+        log.write(f"\n--->{task_name}  <success>\n")
         result = subprocess.run(command, stdout=log, stderr=log)
     
     # Store each task's result in the summary dictionary

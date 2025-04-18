@@ -6,7 +6,7 @@ import os
 
 
 def filesystem_security():
-    print("\n 📁Filesystem Security Permisson Hardening \n")
+    print("\n📁 Filesystem Security Permisson Hardening \n")
     time.sleep(1)
     success = True
 

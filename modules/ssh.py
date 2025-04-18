@@ -27,17 +27,17 @@ def ssh_hardening():
         "ClientAliveCountMax": "0",             # Disconnect immediately after 1 interval
         "AllowTcpForwarding": "no",
         "UseDNS": "no",
-        "Banner": " /etc/issue.net"
+        "LoginGraceTime": "30",                 # Shorten login grace time
+        "Banner": "/etc/issue.net"
     }
 
-    #Apply settings
-
-    for key,value in harden_rules.items():
-         success &= log_output([
+    # Apply each setting
+    for key, value in harden_rules.items():
+        log_output([
             "sed", "-i",
-            f"s /^#*{key}.*/{key} {value}/",
+            f"s/^#*{key}.*/{key} {value}/",
             ssh_config
-        ], f"Set {key} to {value}", "SSH Security Hardening")
+        ], f"Set {key} to {value}", "SSH Hardening")
     
     try:
         with open("/etc/issue.net", "w") as banner_file:

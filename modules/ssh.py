@@ -51,7 +51,7 @@ def ssh_hardening():
 ************************************************************
 """
         with open("/etc/issue.net", "w") as banner_file:
-            banner_file.write(banner_file)
+            banner_file.write(banner_message)
         log_output(["chmod", "644", "/etc/issue.net"], "Set SSH login Banner", "SSH Secure Banner")
     except Exception as e:
         print(f"⚠️ Error creating banner: {str(e)}")
